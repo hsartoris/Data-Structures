@@ -1,0 +1,22 @@
+# java shit
+*target*
+*.jar
+*.war
+*.ear
+*.class
+# eclipse shit
+.metadata
+.project
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classparth
+.settings/
+.loadpath
+*.launch
+

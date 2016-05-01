@@ -1,0 +1,14 @@
+\documentclass[11pt]{article}
+\usepackage{mathtools}
+
+\begin{document}
+Show $7n^2 + 5n -1$ is $\O(n^2)$\\
+Need to prove $7n^2 + 5n -1 \leq Cn^2$ for $C>0, n>n_0$\\
+\begin{align*}
+7n^2 &\leq 7n^2\\
+5n &\leq 5n^2 \tag{if $n \geq 1$} \\
+-1 &\leq 0 \\
+7n^2 + 5n -1 &\leq 7n^2 + 5n^2 \\
+&\leq 12n^2 = Cn^2\\
+\end{align*}
+\end{document}
