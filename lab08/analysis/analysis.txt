@@ -1,0 +1,19 @@
+With hashing function 1:
+Read 34828 words in ispell.words
+Number of items 235886
+Number of buckets 500
+Num. Items per bucket 471.772
+Number of non-empty buckets 33
+Average number of items per filled bucket 7148.060606060606
+Largest bucket 23389
+Number of buckets with 0 elements 467	93.4 %
+Number of buckets with 1 elements 0	0.0 %
+Number of buckets with 2 elements 0	0.0 %
+Number of buckets with 3 elements 0	0.0 %
+Number of buckets with 4 elements 0	0.0 %
+Number of buckets with 5 elements 0	0.0 %
+Number of buckets with 6 elements 0	0.0 %
+Number of buckets with 7 elements 0	0.0 %
+Number of buckets with 8 elements 0	0.0 %
+Number of buckets with >=9 elements 33	6.6 %
+

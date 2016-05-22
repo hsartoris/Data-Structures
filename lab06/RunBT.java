@@ -11,7 +11,7 @@ public class RunBT {
 
     public static void main(String[] args) {
 	Random rand = new Random();
-	LinkedBinaryTree tree = new LinkedBinaryTree<Integer>();  // the tree
+	LinkedBinaryTree<Integer> tree = new LinkedBinaryTree<Integer>();  // the tree
 	BufferedReader stdin = 
 	    new BufferedReader(new InputStreamReader(System.in));
 	char menuchoice = 'h'; // menu choice character entered by user
@@ -90,7 +90,7 @@ public class RunBT {
 			System.out.println("Found it.");
 		    break;
 		case 'n': // new tree, new display too
-		    tree = new LinkedBinaryTree();
+		    tree = new LinkedBinaryTree<Integer>();
 		    System.out.println("Tree deleted.  New tree!.");
 		    display.close();
 		    display = new BTDisplay(tree);

@@ -3,6 +3,13 @@
    Elements are inserted randomly.
    
  */
+
+/*
+ * inOrder:  BFHGPRSTWYZ
+ * preOrder: PFBHGSRYTWZ
+ * postOrder:BGHFPRWTZYS
+ */
+
 import java.io.PrintWriter;
 
 public class LinkedBinaryTree<T> implements BinaryTree<T>,Visitable<T> {
@@ -71,8 +78,7 @@ public class LinkedBinaryTree<T> implements BinaryTree<T>,Visitable<T> {
 
 
     public int height() {
-	// TODO
-	return 0;
+		return height(root);
     }
 
     /* 
@@ -80,8 +86,15 @@ public class LinkedBinaryTree<T> implements BinaryTree<T>,Visitable<T> {
        sets heights in all encountered nodes.
     */
     private int height(BTNode<T> t) {
-	// TODO
-	return -1;
+    	if (t == null) return -1;
+    	int leftHeight = height(t.left()) + 1;
+    	int rightHeight = height(t.right()) + 1;
+    	if (leftHeight > rightHeight) {
+    		t.height = leftHeight;
+    		return leftHeight;
+    	}
+    	t.height = rightHeight;
+    	return rightHeight;
     }
 
     /**
@@ -97,21 +110,42 @@ public class LinkedBinaryTree<T> implements BinaryTree<T>,Visitable<T> {
        Preorder traversal.
     */
     public void preOrder() {
-	// TODO
+    	preOrder(root);
+    }
+    
+    public void preOrder(BTNode<T> t) {
+    	if (t == null) return;
+    	visit(t.element());
+    	preOrder(t.left());
+    	preOrder(t.right());
     }
 
     /**
        Inorder traversal.
     */
     public void inOrder() {
-	// TODO
+    	inOrder(root);
+    }
+    
+    private void inOrder(BTNode<T> t) {
+    	if (t == null) return;
+    	inOrder(t.left());
+    	visit(t.element());
+    	inOrder(t.right());
     }
 
     /**
        Postorder traversal.
     */
     public void postOrder() {
-	// TODO
+		postOrder(root);
+    }
+    
+    private void postOrder(BTNode<T> t) {
+    	if (t == null) return;
+    	postOrder(t.left());
+    	postOrder(t.right());
+    	visit(t.element());
     }
 
     /*
