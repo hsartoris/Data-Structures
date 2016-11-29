@@ -113,21 +113,38 @@ public class  Recursion {
     	}
     }
     
+    public static boolean isPal(String s) {
+    	s = s.toLowerCase();
+    	if (s.length() == 0 || s.length() == 1) return true;
+    	if (!Character.isAlphabetic(s.charAt(0))) return isPal(s.substring(1, s.length()));
+    	if (!Character.isAlphabetic(s.charAt(s.length()-1))) return isPal(s.substring(0, s.length()-1));
+    	if (s.charAt(0) == s.charAt(s.length() - 1)) {
+    		if (s.length() == 2) return true;
+    		return isPal(s.substring(1, s.length() - 1));
+    	}
+    	return false;
+    }
+  
+    
     public static void main(String[] args) {
-    	/*for (int i = -100; i < 100; i++) {
-    	*	if (isEven(i) == isOdd(i)) throw new NullPointerException();
-    	} */
-    	testSearch();
-    	for (int counter = 0; counter < 25; counter++) { // test this a lot
-	    	int[] testSumArray = randArray(50);
-	    	int sum = 0;
-	    	for (int i = 0; i < testSumArray.length; i++) sum += testSumArray[i];
-	    	if (sumArray(testSumArray, 0, testSumArray.length - 1) != sum) { 
-	    		System.out.println("sumArray test failed!");
-	    		break;
-	    	}
-	    }
-    	p(hanoi(3, 'A', 'C', 'B') + " moves to complete.");
+    	if (false) {
+			/*for (int i = -100; i < 100; i++) {
+				*	if (isEven(i) == isOdd(i)) throw new NullPointerException();
+				} */
+			testSearch();
+			for (int counter = 0; counter < 25; counter++) { // test this a lot
+				int[] testSumArray = randArray(50);
+				int sum = 0;
+				for (int i = 0; i < testSumArray.length; i++)
+					sum += testSumArray[i];
+				if (sumArray(testSumArray, 0, testSumArray.length - 1) != sum) {
+					System.out.println("sumArray test failed!");
+					break;
+				}
+			} 
+		}
+		//p(hanoi(3, 'A', 'C', 'B') + " moves to complete.");
+    	System.out.println(isPal("A man, a plan, a canal, Panama!"));
     	
     }
 
